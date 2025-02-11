@@ -1,0 +1,131 @@
+/* Footer Outer Container */
+ .footer_outer_container {
+    background-color: #111;
+    color: grey;
+    display: flex;
+    justify-content: center;
+    padding: 2rem 0;
+}
+
+
+.footer_inner_container {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+}
+
+/* Social Media Icons */
+.footer_icons {
+    display: flex;
+    justify-content: start;
+    gap: 1.5rem;
+    margin-left: 10px;
+    color: #fff;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.footer_icons svg:hover {
+    color: red;
+}
+
+/* Footer Data */
+.footer_data {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+    /* text-align: center; */
+    margin-bottom: 1rem;
+}
+
+.footer_data div {
+    flex: 1;
+    min-width: 150px;
+    padding: 0.5rem;
+}
+
+/* Footer Links */
+.footer_data ul {
+    list-style: none;
+    height: 12vh; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 0.5rem;
+}
+
+.footer_data ul li {
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.footer_data ul li:hover {
+    color: #fff;
+}
+
+/* Service Code */
+.service_code {
+    border: 1px solid #fff;
+    max-width: 150px;
+    text-align: center;
+    width: 15%;
+    padding: 0.25rem;
+    margin: .8rem 0;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.service_code:hover {
+    background-color: #fff;
+    color: #111;
+}
+
+/* Copyright */
+.copy_write {
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer_inner_container {
+        width: 80%;
+    }
+
+    .footer_data {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer_data div {
+        text-align: center;
+    }
+
+    .service_code {
+        width: 80%;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer_inner_container {
+        width: 90%;
+    }
+
+    .footer_icons {
+        font-size: 1.2rem;
+        gap: 1rem;
+    }
+
+    .footer_data ul li {
+        font-size: 0.8rem;
+    }
+
+    .copy_write {
+        font-size: 0.7rem;
+    }
+} 
