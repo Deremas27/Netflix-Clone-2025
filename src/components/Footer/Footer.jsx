@@ -8,7 +8,7 @@ function Footer() {
   return (
     <>
       <div className={FooterCSS["footer_outer_container"]}>
-        <div className={FooterCSS["footer_inner_container"]}>
+        <div className={FooterCSS.footer_inner_container}>
           <div className={FooterCSS["footer_icons"]}>
             <FacebookOutlinedIcon />
             <InstagramIcon />
@@ -44,10 +44,10 @@ function Footer() {
               </ul>
             </div>
           </div>
-          <div className={FooterCSS["service_code"]}>
+          <div className={FooterCSS.service_code}>
             <p>Service Code</p>
           </div>
-          <div className={FooterCSS["copy_write"]}>
+          <div className={FooterCSS.copy_write}>
             &copy; 1997-2024 Netflix, Inc.
           </div>
         </div>

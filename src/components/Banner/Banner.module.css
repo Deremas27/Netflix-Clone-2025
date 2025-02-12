@@ -1,0 +1,64 @@
+.banner {
+    /* margin-top: -1vh; */
+    height: 80vh;
+    /* padding-left: 1rem; */
+    margin-bottom: -4rem;
+    color: white;
+    object-fit: contain;
+}
+.banner__contents {
+    margin-left: 3rem;
+    padding-top: 4rem;
+}
+.banner__title {
+    font-size: 3rem;
+    font-weight: 800;
+    padding-bottom: .3rem;
+}
+.banner__description {
+    width: 45rem;
+    line-height: 1;
+    padding: 1rem 0;
+    font-size: 1rem;
+    max-width: 22rem;
+    height: 6rem;
+}
+/* .banner__butons {
+    display: flex;
+    justify-content: start;
+    gap: 1.5rem;
+} */
+.banner__button {
+    cursor: pointer;
+    color: #fff;
+    width: 6rem;
+    outline: none;
+    border: none;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: .2vw;
+    padding: .5rem 1rem;
+    margin-right: 1rem;
+    background-color: rgba(51, 51, 51, .5);
+}
+.play {
+    color: #000;
+    background-color: #fff;
+}
+.list {
+    background-color: #283e3e;
+}
+.banner__button:hover {
+  color: #000;
+  background-color: #c6c6c6;
+  transition: all 0.2s;
+}
+.banner__fadeBottom {
+  height: 40vh;
+  background-image: linear-gradient(
+    180deg,
+    transparent,
+    rgb(37, 37, 37, 0.91),
+    #111
+  );
+}
