@@ -1,0 +1,18 @@
+
+.nav-wrapper {
+  background: rgba(0, 0, 0, 0.8);
+  font-size: 0.85em;
+  font-weight: 200;
+}
+.nav-wrapper ul li a {
+  color: #fff;
+}
+.netflixLogo {
+  width: 4rem;
+}
+
+@media (max-width: 420px) {
+  .nav-wrapper {
+    width: 100%;
+  }
+}

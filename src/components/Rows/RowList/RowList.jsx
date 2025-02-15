@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from "react";
 import Row from "../Row/Row";
 import requests from "../../../utils/requests";
@@ -10,6 +11,8 @@ function RowList() {
         fetchUrl={requests.fetchNetflixOriginals}
         isLargeRow={true}
       />
+      <Row title="Drama Videos" fetchUrl={requests.fetchDramaMovies} />
+      <Row title="Kids Videos" fetchUrl={requests.fetchKidsVideos} />
       <Row title="Trending Now" fetchUrl={requests.fetchTrending} />
       <Row title="Top Rated" fetchUrl={requests.fetchTopRatedMovies} />
       <Row title="Action Movies" fetchUrl={requests.fetchActionMovies} />

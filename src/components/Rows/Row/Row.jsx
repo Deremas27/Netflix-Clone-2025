@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import React, { useEffect, useState } from "react";
 import RowStyle from "./Row.module.css";
@@ -68,7 +69,7 @@ function Row({ title, fetchUrl, isLargeRow }) {
             />
           ))}
         </div>
-        <div style={{ padding: "2.5rem" }}>
+        <div style={{ padding: "1rem" }}>
           {trailerUrl && <YouTube videoId={trailerUrl} opts={opts} />}
         </div>
       </div>

@@ -2,9 +2,12 @@ import React, { useEffect, useState } from "react";
 import requests from "../../utils/requests";
 import axios from "../../utils/axios";
 import BannerCSS from "./Banner.module.css";
+import movieTrailer from "movie-trailer";
+import YouTube from "react-youtube";
 
-function Banner() {
+function BannerPlay() {
   const [movie, setMovie] = useState({});
+  const [trailerUrl, setTrailerUrl] = useState("");
 
   useEffect(() => {
     (async () => {
@@ -23,9 +26,35 @@ function Banner() {
     })();
   }, []);
 
+  const clickPlay = (movie) => {
+    if (trailerUrl) {
+      setTrailerUrl("");
+    } else {
+      movieTrailer(movie?.title || movie?.name || movie?.original_name)
+        .then((url) => {
+          console.log(url);
+          const urlParams = new URLSearchParams(new URL(url).search);
+          const videoId = urlParams.get("v");
+          //   console.log(urlParams);
+          //   console.log("Trailer Video Id:", videoId);
+          setTrailerUrl(videoId);
+        })
+        .catch((error) => console.log("Error finding trailer:", error));
+    }
+  };
+
+  const opts = {
+    height: "390",
+    width: "100%",
+    playerVars: {
+      autoplay: 1,
+    },
+  };
+
   function truncate(str, n) {
     return str?.length > n ? str.substr(0, n - 1) + "..." : str;
   }
+
   return (
     <>
       <div
@@ -42,7 +71,10 @@ function Banner() {
             {movie?.title || movie?.name || movie?.original_name}
           </h1>
           <div className={BannerCSS["banner__butons"]}>
-            <button  className={`${BannerCSS.banner__button} ${BannerCSS.play}`}>
+            <button
+              onClick={() => clickPlay(movie)}
+              className={`${BannerCSS.banner__button} ${BannerCSS.play}`}
+            >
               Play
             </button>
             <button
@@ -58,8 +90,11 @@ function Banner() {
         <div className={BannerCSS["banner__fadeBottom"]} />
         {/* <div className="banner__fadeBottom"></div> */}
       </div>
+      <div style={{ padding: "2.5rem", marginTop: "2rem"}}>
+        {trailerUrl && <YouTube videoId={trailerUrl} opts={opts} />}
+      </div>
     </>
   );
 }
 
-export default Banner;
+export default BannerPlay;
