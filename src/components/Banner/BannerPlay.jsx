@@ -13,13 +13,13 @@ function BannerPlay() {
     (async () => {
       try {
         const request = await axios.get(requests.fetchNetflixOriginals);
-        console.log(request);
+
         setMovie(
           request.data.results[
             Math.floor(Math.random() * request.data.results.length)
           ]
         );
-        console.log(request.data);
+
       } catch (error) {
         console.log("Error", error);
       }
@@ -32,11 +32,10 @@ function BannerPlay() {
     } else {
       movieTrailer(movie?.title || movie?.name || movie?.original_name)
         .then((url) => {
-          console.log(url);
+
           const urlParams = new URLSearchParams(new URL(url).search);
           const videoId = urlParams.get("v");
-          //   console.log(urlParams);
-          //   console.log("Trailer Video Id:", videoId);
+
           setTrailerUrl(videoId);
         })
         .catch((error) => console.log("Error finding trailer:", error));
