@@ -11,9 +11,13 @@ function RowList() {
         fetchUrl={requests.fetchNetflixOriginals}
         isLargeRow={true}
       />
-      <Row title="Drama Videos" fetchUrl={requests.fetchDramaMovies} />
       <Row title="Kids Videos" fetchUrl={requests.fetchKidsVideos} />
       <Row title="Trending Now" fetchUrl={requests.fetchTrending} />
+      <Row
+        title="Drama Videos"
+        isLargeRow={true}
+        fetchUrl={requests.fetchDramaMovies}
+      />
       <Row title="Top Rated" fetchUrl={requests.fetchTopRatedMovies} />
       <Row title="Action Movies" fetchUrl={requests.fetchActionMovies} />
       <Row title="Comedy Movies" fetchUrl={requests.fetchComedyMovies} />
