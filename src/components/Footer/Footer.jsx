@@ -8,9 +8,9 @@ function Footer() {
   return (
     <>
       <div
-        className={`container-fluid bg-dark text-light py-4 {FooterCSS["footer_outer_container"]}`}
+        className={`container-fluid bg-dark text-light py-4 ${FooterCSS["footer_outer_container"]}`}
       >
-        <div className={`container {FooterCSS.footer_inner_container}`}>
+        <div className={`container ${FooterCSS.footer_inner_container}`}>
           <div className={FooterCSS["footer_icons"]}>
             <FacebookOutlinedIcon />
             <InstagramIcon />
