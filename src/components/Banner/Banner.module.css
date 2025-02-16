@@ -62,3 +62,23 @@
     #111
   );
 }
+
+
+@media (max-width: 576px) {
+    .banner__description{
+        font-style: .7rem;
+        width: 14rem;
+    }
+    .banner__title{
+        font-style: 1.5rem;
+    }
+}
+@media (max-width: 320px) {
+    .banner__description{
+        font-style: .4rem;
+        width: 8rem;
+    }
+    .banner__title{
+        font-style: 1rem;
+    }
+}

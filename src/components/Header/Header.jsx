@@ -83,7 +83,7 @@ function Header() {
           </nav>
         </div>
       </div> */}
-      <Navbar expand="md" className="bg-dark navbar-dark py-2">
+      <Navbar expand="md" className="bg-dark navbar-dark py-2 px-3">
         <Container>
           {/* Netflix Logo */}
           <Navbar.Brand href="#">
