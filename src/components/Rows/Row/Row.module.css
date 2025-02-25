@@ -25,8 +25,12 @@
     transform: scale(1.09);
 }
 .row {
-    padding: 1.25rem;
-    margin-top: 1rem;
+    padding: 0.625rem;
+    /* margin-top: 1rem; */
     color: white;
-    background-color: black;
+    background-color: #D5D5D5;
+}
+.row h1 {
+    margin-left: 1rem;
+    color: #585757;
 }
