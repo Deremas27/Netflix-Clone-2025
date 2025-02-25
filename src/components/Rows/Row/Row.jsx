@@ -53,7 +53,30 @@ function Row({ title, fetchUrl, isLargeRow }) {
       <div className={RowStyle.row}>
         <h1>{title}</h1>
         <div className={RowStyle.row__posters}>
-          {movies?.map((movie, index) => (
+          {movies?.length > 0 &&
+            movies
+              .filter((movie) => movie?.poster_path || movie?.backdrop_path) // Remove movies with no images
+              .map((movie, index) => {
+                const imagePath = isLargeRow
+                  ? movie.poster_path
+                  : movie.backdrop_path;
+
+                if (!imagePath) return null; // Ensure we skip movies without images
+
+                return (
+                  <img
+                    onClick={() => handleClick(movie)}
+                    key={movie.id || index} // Use movie.id if available
+                    src={`${base_url}${imagePath}`}
+                    alt={movie?.name || "Movie poster"}
+                    className={`${RowStyle.row__poster} ${
+                      isLargeRow && RowStyle.row__posterLarge
+                    }`}
+                  />
+                );
+              })}
+
+          {/* {movies?.map((movie, index) => (
             <img
               onClick={() => handleClick(movie)}
               key={index}
@@ -65,7 +88,7 @@ function Row({ title, fetchUrl, isLargeRow }) {
                 isLargeRow && RowStyle.row__posterLarge
               }`}
             />
-          ))}
+          ))} */}
         </div>
         <div style={{ padding: ".5rem" }}>
           {trailerUrl && <YouTube videoId={trailerUrl} opts={opts} />}
